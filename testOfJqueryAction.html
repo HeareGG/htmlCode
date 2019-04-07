@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script >
+		$(document).ready(function(){
+  			$("#hide").click(function(){
+    			$("#p1").hide();
+  			});
+  			$("#show").click(function(){
+    			$("#p1").show();
+  			});
+  			$("#hideAndShowWithSpeed #hide").click(function(){
+  				$("#SpeedDiv").hide(1000,"linear",function(){
+      				alert("Hide() 方法已完成!");
+    			});
+  			});
+  			$("#hideAndShowWithSpeed #show").click(function(){
+  				$("#SpeedDiv").show(1000,"swing",function(){
+      				alert("show() 方法已完成!");
+    			});
+  			});
+  			$("#hideAndShowWithSpeed #toggle").click(function(){
+  				$("#SpeedDiv").toggle(1000,"linear");
+  			});
+		});
+	</script>
+	<style type="text/css">
+		#SpeedDiv{
+			width: 130px;
+			height: 50px;
+			padding: 15px;
+			margin: 15px;
+			background-color: green;
+		}
+	</style>
+</head>
+<body>
+<!-- 测试hide 和show 方法-->
+<div id = "hideAndshow">
+	<p id = "p1" >如果你点击“隐藏” 按钮，我将会消失。</p>
+	<button id="hide">隐藏</button>
+	<button id="show">显示</button>
+</div>
+<!-- hide和show  带参数 模式 $(selector).hide(speed,callback);-->
+<div id="hideAndShowWithSpeed">
+	<div id="SpeedDiv">带速度隐藏与显示</div>
+	<button id="hide">隐藏</button>
+	<button id="show">显示</button>
+	<button id="toggle">点我</button>
+</div>
+</body>
+</html>
